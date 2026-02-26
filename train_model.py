@@ -41,7 +41,7 @@ def train():
 
         
         print("Training Logistic Regression...")
-        lr_model = LogisticRegression()
+        lr_model = LogisticRegression(max_iter=1000)
         lr_model.fit(X_train, y_train)
         joblib.dump(lr_model, lr_save_path)
         print(f"Logistic Regression saved to: {lr_save_path}")
@@ -54,3 +54,4 @@ def train():
 if __name__ == "__main__":
 
     train()
+
