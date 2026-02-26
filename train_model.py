@@ -4,7 +4,7 @@ import joblib
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.linear_model import LogisticRegression  # Added this
+from sklearn.linear_model import LogisticRegression  
 from sklearn.metrics import accuracy_score
 
 def train():
@@ -41,7 +41,7 @@ def train():
 
         
         print("Training Logistic Regression...")
-        lr_model = LogisticRegression(max_iter=1000, solver='liblinear') # Standard for this dataset
+        lr_model = LogisticRegression()
         lr_model.fit(X_train, y_train)
         joblib.dump(lr_model, lr_save_path)
         print(f"Logistic Regression saved to: {lr_save_path}")
@@ -52,4 +52,5 @@ def train():
         print(f" Error: {e}")
 
 if __name__ == "__main__":
+
     train()
